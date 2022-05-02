@@ -9,7 +9,7 @@ Spring Boot java application with mvn.
 
 **Run the project:**
 1.	Import the project.
-2.	Run mvn clean install at the root folder.
+2.	Run mvn clean install in the root folder.
 
 There is an input file called players.csv with the basic details about 9 players.
 
@@ -17,8 +17,8 @@ There is an input file called players.csv with the basic details about 9 players
 
 Reading the existing csv file, call to balldontlie API to fetch additional details of the player.
 Creating new playersOutput.csv file which contains all the information about the players.
-Before calling balldontlie API we will check if the player exist in the Json file(cache), if yes we will fetch it from the cache, otherwise we will call  balldontlie API and will save the new player in the cache.
-This behavior will execute every 15 min since the first time it executed manually.  
+Before calling balldontlie API we will check if the player exist in the Json file(cache), if yes, we will fetch it from the cache, else we will call balldontlie API and will save the new player in the cache.
+This behavior will be executed every 15 min since the first time it executed manually(by calling the end point).  
 
 **End point: http://localhost:8080/ ->WebSocket.**
 
@@ -41,7 +41,7 @@ Open 2 browsers:
 2.	Open http://localhost:8080/player 
 3.	Change the input csv file(resources/CSVFiles/players.csv), add new player/change player id.
 
-In the next executing of /player the server will send message to client and notify that there was change, client will print the change time on the screen.
+In the next executing of player the server will send message to client and notify that there was a change, client will print the change time on the screen.
 
 ![image](https://user-images.githubusercontent.com/104754112/166199936-b96951a7-61f7-4666-969c-9964819ad40c.png)
 
